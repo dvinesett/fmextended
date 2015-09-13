@@ -2374,12 +2374,22 @@
     <table name="scrobbles" schema="public" catalog="lastfm_development" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc2Nyb2JibGVzX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
       <column name="time" sqlType="date" precision="13" scale="0" nullable="true" jdbcType="91"/>
-      <column name="trackname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="artistname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
-      <column name="albumname" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="track_name" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="artist_name" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="album_name" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="application" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="false" jdbcType="93"/>
+      <column name="unixtime" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="track_mbid" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="artist_mbid" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="uncorrected_track_name" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="uncorrected_track_mbid" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="uncorrected_artist_name" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="uncorrected_artist_mbid" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="album_mbid" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="album_artist_name" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
+      <column name="album_artist_mbid" sqlType="varchar" precision="2147483647" scale="0" nullable="true" jdbcType="12"/>
       <primary-key name="scrobbles_pkey" columns="id"/>
     </table>
     <table name="scrobbles_id_seq" schema="public" catalog="lastfm_development" type="SEQUENCE">
