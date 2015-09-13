@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  time: 2015-09-06
+  trackname: MyString
+  artistname: MyString
+  albumname: MyString
+  application: MyString
+
+two:
+  time: 2015-09-06
+  trackname: MyString
+  artistname: MyString
+  albumname: MyString
+  application: MyString

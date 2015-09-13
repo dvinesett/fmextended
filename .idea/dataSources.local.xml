@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails lastfm: development" uuid="cedaf179-2d12-4e32-b633-55de3fd191d9">
+      <schema-pattern>lastfm_development.*</schema-pattern>
+      <default-schemas>lastfm_development.*</default-schemas>
+    </data-source>
+    <data-source name="Rails lastfm: test" uuid="9cb49978-7292-4e68-a5dc-bd240d0cc3c7">
+      <schema-pattern>lastfm_test.*</schema-pattern>
+      <default-schemas>lastfm_test.*</default-schemas>
+    </data-source>
+    <data-source name="Rails lastfm: production" uuid="4d7f3542-1b41-427b-a93d-c00d74a21aac">
+      <first-sync>true</first-sync>
+      <user-name>lastfm</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe6dfebdff9dffedfecdfe7dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+  </component>
+</project>

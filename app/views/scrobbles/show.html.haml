@@ -1,0 +1,19 @@
+%p#notice= notice
+%p
+  %strong Time:
+  = @scrobble.time
+%p
+  %strong Trackname:
+  = @scrobble.track_name
+%p
+  %strong Artistname:
+  = @scrobble.artist_name
+%p
+  %strong Albumname:
+  = @scrobble.album_name
+%p
+  %strong Application:
+  = @scrobble.application
+= link_to 'Edit', edit_scrobble_path(@scrobble)
+|
+= link_to 'Back', scrobbles_path

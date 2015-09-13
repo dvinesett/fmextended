@@ -1,0 +1,31 @@
+%p#notice= notice
+%h1 Listing Scrobbles
+
+= form_tag import_scrobbles_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag 'Import'
+
+
+%table
+  %thead
+    %tr
+      %th Time
+      %th Trackname
+      %th Artistname
+      %th Albumname
+      %th Application
+      %th{colspan: '3'}
+  %tbody
+    - @scrobbles.each do |scrobble|
+      %tr
+        %td= scrobble.time
+        %td= scrobble.track_name
+        %td= scrobble.artist_name
+        %td= scrobble.album_name
+        %td= scrobble.application
+        %td= link_to 'Show', scrobble
+        %td= link_to 'Edit', edit_scrobble_path(scrobble)
+        %td= link_to 'Destroy', scrobble, method: :delete, data: { confirm: 'Are you sure?' }
+        =# TODO: destroy all. maybe dev only button
+%br
+= link_to 'New Scrobble', new_scrobble_path
