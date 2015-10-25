@@ -61,8 +61,18 @@ class ScrobblesController < ApplicationController
     end
   end
 
-  def import
+  def delete_all
+    byebug
+    Scrobble.delete_all
+    respond_to do |format|
+      format.html {redirect_to scrobbles_url, notice: 'All scrobbles were successfully destroyed.'}
+      format.json { head :no_content }
+    end
+  end
+
+  def import_file
     # TODO: don't import if there is no file. maybe put in the view and not even accept button press
+    # byebug
     Scrobble.import(params[:file])
     redirect_to scrobbles_path, notice: 'Scrobbles were successfully imported.'
   end

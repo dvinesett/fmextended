@@ -7,4 +7,10 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    %div{id: 'main-container', class: 'container'}
+      %div{class: 'row'}
+        %div{class: 'col-xs-2 pull-left'}
+          = link_to scrobbles_url do
+            %h3 toolbar placeholder
+        %div{class: 'col-xs-10'}
+          = yield

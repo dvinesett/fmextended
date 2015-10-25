@@ -1,31 +1,42 @@
 %p#notice= notice
-%h1 Listing Scrobbles
+%div{class: 'row'}
+  %div{class: 'col-xs-7'}
+    %h1 Listing Scrobbles
+  %div{class: 'col-xs-3'}
+    = link_to new_scrobble_path, class: 'btn btn-success', id: 'btn-new-scrobble' do
+      New Scrobble &nbsp;
+      %i{class: 'glyphicon glyphicon-plus'}
+  %div{class: 'col-xs-2'}
+    = link_to delete_all_scrobbles_path, method: :delete, data: { confirm: 'Deleting ALL scrobbles! Are you sure?' }, id: 'btn-delete-all', class: 'btn btn-danger btn-md' do
+      %i{class: 'glyphicon glyphicon-trash'}
+%div{class: 'row'}
+  = link_to import_scrobbles_path, class: 'btn btn-success' do
+    Import Scrobbles
 
-= form_tag import_scrobbles_path, multipart: true do
-  = file_field_tag :file
-  = submit_tag 'Import'
-
-
-%table
-  %thead
-    %tr
-      %th Time
-      %th Trackname
-      %th Artistname
-      %th Albumname
-      %th Application
-      %th{colspan: '3'}
-  %tbody
-    - @scrobbles.each do |scrobble|
+%div{class: 'row'}
+  %table{class: 'table table-hover'}
+    %thead
       %tr
-        %td= scrobble.time
-        %td= scrobble.track_name
-        %td= scrobble.artist_name
-        %td= scrobble.album_name
-        %td= scrobble.application
-        %td= link_to 'Show', scrobble
-        %td= link_to 'Edit', edit_scrobble_path(scrobble)
-        %td= link_to 'Destroy', scrobble, method: :delete, data: { confirm: 'Are you sure?' }
-        =# TODO: destroy all. maybe dev only button
-%br
-= link_to 'New Scrobble', new_scrobble_path
+        %th Time
+        %th Trackname
+        %th Artistname
+        %th Albumname
+        %th Application
+        %th
+    %tbody
+      - @scrobbles.each do |scrobble|
+        %tr
+          %td= scrobble.time
+          %td= scrobble.track_name
+          %td= scrobble.artist_name
+          %td= scrobble.album_name
+          %td= scrobble.application
+          %td
+            = link_to scrobble, class: 'btn btn-inverse btn-xs' do
+              %i{class: 'glyphicon glyphicon-th-list'}
+            = link_to edit_scrobble_path(scrobble), class: 'btn btn-inverse btn-xs' do
+              %i{class: 'glyphicon glyphicon-edit'}
+            = link_to scrobble, method: :delete, data: { confirm: 'Are you sure?'}, class: 'btn btn-inverse btn-xs' do
+              %i{class: 'glyphicon glyphicon-remove'}
+
+  %br

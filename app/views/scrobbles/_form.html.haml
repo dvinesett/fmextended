@@ -27,5 +27,7 @@
     = f.label :application
     %br/
     = f.text_field :application
+  %br
   .actions
-    = f.submit
+    = button_tag type: 'submit', class: 'btn btn-primary' do
+      Create Scrobble

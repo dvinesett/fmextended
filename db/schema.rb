@@ -14,26 +14,26 @@
 ActiveRecord::Schema.define(version: 20150913021142) do
 
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "scrobbles", force: :cascade do |t|
-    t.date     "time"
-    t.string   "track_name"
-    t.string   "artist_name"
-    t.string   "album_name"
-    t.string   "application"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "unixtime"
-    t.string   "track_mbid"
-    t.string   "artist_mbid"
-    t.string   "uncorrected_track_name"
-    t.string   "uncorrected_track_mbid"
-    t.string   "uncorrected_artist_name"
-    t.string   "uncorrected_artist_mbid"
-    t.string   "album_mbid"
-    t.string   "album_artist_name"
-    t.string   "album_artist_mbid"
+  create_table 'scrobbles', force: :cascade do |t|
+    t.date     'time'
+    t.string   'track_name'
+    t.string   'artist_name'
+    t.string   'album_name'
+    t.string   'application'
+    t.datetime 'created_at',              null: false
+    t.datetime 'updated_at',              null: false
+    t.integer  'unixtime'
+    t.string   'track_mbid'
+    t.string   'artist_mbid'
+    t.string   'uncorrected_track_name'
+    t.string   'uncorrected_track_mbid'
+    t.string   'uncorrected_artist_name'
+    t.string   'uncorrected_artist_mbid'
+    t.string   'album_mbid'
+    t.string   'album_artist_name'
+    t.string   'album_artist_mbid'
   end
 
 end

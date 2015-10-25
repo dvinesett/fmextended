@@ -1,0 +1,53 @@
+%h1 Import Scrobbles
+
+%p This feature currently only works with the .tsv version of the file
+
+-# TODO: make this work better... submit button,,, click text field for upload... uhh
+= form_tag import_file_scrobbles_path, multipart: true do |f|
+  %div{class: 'row'}
+    %div{class: 'col-xs-12'}
+      %div{class: 'input-group'}
+        %span{class: 'input-group-btn'}
+          %span{class: 'btn btn-inverse btn-file'}
+            Browse
+            = file_field_tag :file
+        %input{type: 'text', class: 'form-control', readonly: true}
+  %br
+  %div{class: 'row'}
+    %div{class: 'col-xs-12'}
+      = button_tag type: 'submit', class: 'btn btn-primary pull-right' do
+        Import File
+
+-#%br
+-#%div{class: 'row'}
+-#  %div{class: 'col-xs-12 pull right'}
+-#    = submit_tag
+
+
+-#             <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse&hellip; <input type="file" multiple>
+                    </span>
+                </span>
+                <input type="text" class="form-control" readonly>
+
+
+-# doesn't work
+-#%div{class: 'row'}
+-#  =form_tag import_file_scrobbles_path, multipart: true do |f|
+-#    %div{class: 'control-group'}
+-#      %div{class: 'attach-set'}
+-#        = f.input :real_file, input_html: { hidden: true }, label: 'Upload Attachment'
+-#        %div{class: 'input-append'}
+-#          %input{id: 'file-display', class: 'input-large uneditable-input', type: 'text'}
+-#          = link_to raw(''), id: 'upload-btn', class: 'btn' do
+-#            %i{class: 'icon-upload-alt'}
+-#            Browse
+
+-# not pretty
+-#%div{class: 'row'}
+-#  %div{class: 'col-xs-12'}
+-#    = form_tag import_scrobbles_path, multipart: true do
+-#      = file_field_tag :file
+-#      = submit_tag 'Import'

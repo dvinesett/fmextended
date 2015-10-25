@@ -34,7 +34,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 ### manually added ###
 gem 'haml-rails', '~> 0.9.0'
-
+gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'autoprefixer-rails'
 
 
 

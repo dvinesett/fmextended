@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   resources :scrobbles do
-    collection { post :import }
+    collection do
+      post :import_file
+      get :import
+      delete :delete_all
+    end
   end
 
   root 'scrobbles#index'

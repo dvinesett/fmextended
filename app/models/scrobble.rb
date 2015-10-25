@@ -3,6 +3,7 @@ class Scrobble < ActiveRecord::Base
 
   def self.import(file)
     # TODO: don't import duplicates
+
     CSV.foreach(file.path, { :col_sep => "\t", :headers => true }) do |row|
       hold = row.to_hash
       Scrobble.create!({
@@ -23,5 +24,47 @@ class Scrobble < ActiveRecord::Base
         album_artist_mbid: hold['album artist mbid']
       })
     end
+
+    # inserts = []
+    # CSV.foreach(file.path, {col_sep: "\t", headers: true}) do |row|
+    #   hold = row.to_hash
+    #   inserts.push "("\
+    #                "#{hold['ISO time']},"\
+    #                "#{hold['track name']},"\
+    #                "#{hold['artist name']},"\
+    #                "#{hold['album name']},"\
+    #                "#{hold['application']},"\
+    #                "#{hold['unixtime']},"\
+    #                "#{hold['track mbid']},"\
+    #                "#{hold['artist mid']},"\
+    #                "#{hold['uncorrected track name']},"\
+    #                "#{hold['uncorrected track mbid']},"\
+    #                "#{hold['uncorrected artist name']},"\
+    #                "#{hold['uncorrected artist mbid']},"\
+    #                "#{hold['album mbid']},"\
+    #                "#{hold['album artist name']},"\
+    #                "#{hold['album artist mbid']}"\
+    #                ")"
+    #
+    # end
+    # Scrobble.connection.execute 'INSERT INTO scrobbles ('\
+    #                             "time,"\
+    #                             "track_name,"\
+    #                             "artist_name,"\
+    #                             "album_name,"\
+    #                             "application,"\
+    #                             "unixtime,"\
+    #                             "track_mbid,"\
+    #                             "artist_mbid,"\
+    #                             "uncorrected_track_name,"\
+    #                             "uncorrected_track_mbid,"\
+    #                             "uncorrected_artist_name,"\
+    #                             "uncorrected_artist_mbid,"\
+    #                             "album_mbid,"\
+    #                             "album_artist_name,"\
+    #                             "album_artist_mbid"\
+    #                             ') VALUES '\
+    #                             "#{inserts.join(", ")}"
+
   end
 end
